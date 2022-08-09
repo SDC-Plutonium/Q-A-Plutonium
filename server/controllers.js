@@ -2,7 +2,7 @@ const { Client } = require("pg");
 
 const client = new Client({
   user: "postgres",
-  host: "127.0.0.1",
+  host: "3.80.88.177",
   database: "storefront",
   password: "postgres",
   port: 5432,
@@ -53,8 +53,6 @@ exports.addQuestion = (req, res) => {
   let values = [product_id, date_written, body, name, email];
   let text =
     "INSERT INTO questions (product_id, date_written, body, asker_name, asker_email, reported, helpful) VALUES ($1,$2,$3,$4,$5,false,0)";
-  console.log(values);
-  console.log(text);
   client.query(text, values, (err, result) => {
     if (err) {
       res.status(501).end();

@@ -45,22 +45,22 @@ CREATE TABLE answers_photos (
 );
 
 COPY product(id,name,slogan,description,category,default_price)
-FROM '/home/ubuntu/sdc-csv-files/product.csv'
+FROM '/tmp/product.csv'
 DELIMITER','
 CSV HEADER;
 
 COPY questions(id,product_id,body,date_written,asker_name,asker_email,reported,helpful)
-FROM '/home/ubuntu/sdc-csv-files/questions.csv'
+FROM '/tmp/questions.csv'
 DELIMITER','
 CSV HEADER;
 
 COPY answers(id,question_id,body,date_written,answerer_name,answerer_email,reported,helpful)
-FROM '/home/ubuntu/sdc-csv-files/answers.csv'
+FROM '/tmp/answers.csv'
 DELIMITER','
 CSV HEADER;
 
 COPY answers_photos(id,answer_id,url)
-FROM '/home/ubuntu/sdc-csv-files/answers_photos.csv'
+FROM '/tmp/answers_photos.csv'
 DELIMITER','
 CSV HEADER;
 

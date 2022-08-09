@@ -19,8 +19,8 @@ app.use(
 
 app.use(bodyParser.json());
 
-app.listen(process.env.PORT, () => {
-  console.log(`listening on port ${process.env.PORT}`);
+app.listen(3000, () => {
+  console.log("listening on port 3000");
 });
 
 app.get("/qa/questions", controllers.getQuestions);
