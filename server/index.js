@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const compression = require("compression");
 const controllers = require("./controllers.js");
+const bodyParser = require("body-parser");
 require("dotenv").config();
 
 const app = express();
@@ -30,10 +31,10 @@ app.post("/qa/questions", controllers.addQuestion);
 
 app.post("/qa/questions/:question_id/answers", controllers.addAnswer);
 
-app.put("/qa/questions/:question_id}/helpful", controllers.markQuestionHelpful);
+app.put("/qa/questions/:question_id/helpful", controllers.markQuestionHelpful);
 
 app.put("/qa/questions/:question_id/report", controllers.reportQuestion);
 
-app.put("/qa/questions/:answer_id/helpful", controllers.markAnswerHelpful);
+app.put("/qa/answers/:answer_id/helpful", controllers.markAnswerHelpful);
 
-app.put("/qa/questions/:answer_id/report", controllers.reportQuestion);
+app.put("/qa/answers/:answer_id/report", controllers.reportAnswer);
